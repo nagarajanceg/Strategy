@@ -1,6 +1,6 @@
 package genericCheckpointing.xmlStoreRestore;
 
-import genericCheckpointing.utill.SerializableObject;
+import genericCheckpointing.util.SerializableObject;
 
 public interface SerStrategy {
     void processInput(SerializableObject sObject);

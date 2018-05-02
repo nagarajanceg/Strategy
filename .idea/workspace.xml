@@ -2,19 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5466dd2a-0746-4319-ac7f-7872cf20cfc2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/input.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/genericCheckpointing/utill/FileProcessor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/SerStrategy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/StoreRestoreHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLDeserialization.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLSerialization.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/genericCheckpointing/utill/FileProcessor.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/util/FileProcessor.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/genericCheckpointing/utill/MyAllTypesFirst.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/util/MyAllTypesFirst.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/genericCheckpointing/utill/MyAllTypesSecond.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/util/MyAllTypesSecond.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/genericCheckpointing/utill/ProxyCreator.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/util/ProxyCreator.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/genericCheckpointing/utill/SerializableObject.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/util/SerializableObject.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/input.txt" afterPath="$PROJECT_DIR$/input.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/genericCheckpointing/driver/Driver.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/driver/Driver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/genericCheckpointing/server/RestoreI.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/server/RestoreI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/genericCheckpointing/server/StoreI.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/server/StoreI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/genericCheckpointing/utill/MyAllTypesFirst.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/utill/MyAllTypesFirst.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/genericCheckpointing/utill/MyAllTypesSecond.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/utill/MyAllTypesSecond.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/genericCheckpointing/utill/ProxyCreator.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/utill/ProxyCreator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/SerStrategy.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/SerStrategy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/StoreRestoreHandler.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/StoreRestoreHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLDeserialization.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLDeserialization.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLSerialization.java" afterPath="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLSerialization.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLSerialization.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="XMLSerialization.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLSerialization.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
@@ -46,17 +47,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XMLDeserialization.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="XMLDeserialization.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLDeserialization.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+            <state relative-caret-position="15">
+              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#518#519#0" expanded="true" />
-                <element signature="e#544#545#0" expanded="true" />
-                <element signature="e#594#595#0" expanded="true" />
-                <element signature="e#624#625#0" expanded="true" />
+                <element signature="e#659#660#0" expanded="true" />
+                <element signature="e#685#686#0" expanded="true" />
+                <element signature="e#735#736#0" expanded="true" />
+                <element signature="e#765#766#0" expanded="true" />
+                <element signature="e#839#840#0" expanded="true" />
+                <element signature="e#864#865#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyAllTypesFirst.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/util/MyAllTypesFirst.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+              <folding>
+                <element signature="e#200#201#0" expanded="true" />
+                <element signature="e#239#240#0" expanded="true" />
+                <element signature="e#273#274#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,14 +92,14 @@
         </entry>
       </file>
       <file leaf-file-name="FileProcessor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/utill/FileProcessor.java">
+        <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/util/FileProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
               <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1283#1284#0" expanded="true" />
-                <element signature="e#1323#1324#0" expanded="true" />
+                <element signature="e#1282#1283#0" expanded="true" />
+                <element signature="e#1322#1323#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,14 +108,14 @@
       <file leaf-file-name="StoreRestoreHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/StoreRestoreHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="133">
+              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#369#370#0" expanded="true" />
-                <element signature="e#414#415#0" expanded="true" />
-                <element signature="e#1046#1047#0" expanded="true" />
-                <element signature="e#1089#1090#0" expanded="true" />
+                <element signature="e#368#369#0" expanded="true" />
+                <element signature="e#413#414#0" expanded="true" />
+                <element signature="e#1045#1046#0" expanded="true" />
+                <element signature="e#1088#1089#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,8 +124,8 @@
       <file leaf-file-name="input.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/input.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            <state relative-caret-position="45">
+              <caret line="3" column="60" lean-forward="false" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -146,10 +163,11 @@
         <option value="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLSerialization.java" />
         <option value="$PROJECT_DIR$/src/genericCheckpointing/utill/FileProcessor.java" />
         <option value="$PROJECT_DIR$/src/input.txt" />
-        <option value="$PROJECT_DIR$/input.txt" />
         <option value="$PROJECT_DIR$/src/genericCheckpointing/driver/Driver.java" />
-        <option value="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLDeserialization.java" />
         <option value="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/StoreRestoreHandler.java" />
+        <option value="$PROJECT_DIR$/input.txt" />
+        <option value="$PROJECT_DIR$/src/genericCheckpointing/util/MyAllTypesFirst.java" />
+        <option value="$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLDeserialization.java" />
       </list>
     </option>
   </component>
@@ -206,6 +224,13 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="genericCheckpointing" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="genericCheckpointing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Strategy" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="genericCheckpointing" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="genericCheckpointing" type="b2602c69:ProjectViewProjectNode" />
@@ -371,28 +396,29 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525180249595</updated>
-      <workItem from="1525180251075" duration="11154000" />
+      <workItem from="1525180251075" duration="23490000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11154000" />
+    <option name="totallyTimeSpent" value="23490000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="727" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32954547" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -453,7 +479,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/utill/SerializableObject.java">
+    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/util/SerializableObject.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="31" lean-forward="false" selection-start-line="2" selection-start-column="31" selection-end-line="2" selection-end-column="31" />
@@ -461,7 +487,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/utill/ProxyCreator.java">
+    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/util/ProxyCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
@@ -471,15 +497,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/utill/MyAllTypesFirst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/utill/MyAllTypesSecond.java">
+    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/util/MyAllTypesSecond.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="56" lean-forward="false" selection-start-line="2" selection-start-column="56" selection-end-line="2" selection-end-column="56" />
@@ -513,22 +531,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/input.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="18" lean-forward="false" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/utill/FileProcessor.java">
+    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/util/FileProcessor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1283#1284#0" expanded="true" />
-            <element signature="e#1323#1324#0" expanded="true" />
+            <element signature="e#1282#1283#0" expanded="true" />
+            <element signature="e#1322#1323#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -551,39 +561,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLSerialization.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/StoreRestoreHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="32" selection-start-column="5" selection-end-line="32" selection-end-column="5" />
+        <state relative-caret-position="133">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#369#370#0" expanded="true" />
-            <element signature="e#414#415#0" expanded="true" />
-            <element signature="e#1046#1047#0" expanded="true" />
-            <element signature="e#1089#1090#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#413#414#0" expanded="true" />
+            <element signature="e#1045#1046#0" expanded="true" />
+            <element signature="e#1088#1089#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/input.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="60" lean-forward="false" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/util/MyAllTypesFirst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="27" lean-forward="true" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding>
+            <element signature="e#200#201#0" expanded="true" />
+            <element signature="e#239#240#0" expanded="true" />
+            <element signature="e#273#274#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLDeserialization.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        <state relative-caret-position="15">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#518#519#0" expanded="true" />
-            <element signature="e#544#545#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#624#625#0" expanded="true" />
+            <element signature="e#659#660#0" expanded="true" />
+            <element signature="e#685#686#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#765#766#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/genericCheckpointing/xmlStoreRestore/XMLSerialization.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

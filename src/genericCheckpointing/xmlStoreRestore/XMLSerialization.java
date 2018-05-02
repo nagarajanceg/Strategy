@@ -1,6 +1,6 @@
 package genericCheckpointing.xmlStoreRestore;
 
-import genericCheckpointing.utill.SerializableObject;
+import genericCheckpointing.util.SerializableObject;
 
 public class XMLSerialization implements SerStrategy {
     @Override

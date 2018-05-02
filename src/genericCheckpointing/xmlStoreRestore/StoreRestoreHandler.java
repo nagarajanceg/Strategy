@@ -1,6 +1,6 @@
 package genericCheckpointing.xmlStoreRestore;
 
-import genericCheckpointing.utill.FileProcessor;
+import genericCheckpointing.util.FileProcessor;
 
 import java.io.BufferedReader;
 import java.lang.reflect.InvocationHandler;

@@ -1,4 +1,4 @@
-package genericCheckpointing.utill;
+package genericCheckpointing.util;
 
 import genericCheckpointing.server.StoreRestoreI;
 

@@ -3,8 +3,8 @@ package genericCheckpointing.driver;
 import genericCheckpointing.server.RestoreI;
 import genericCheckpointing.server.StoreI;
 import genericCheckpointing.server.StoreRestoreI;
-import genericCheckpointing.utill.ProxyCreator;
-import genericCheckpointing.utill.SerializableObject;
+import genericCheckpointing.util.ProxyCreator;
+import genericCheckpointing.util.SerializableObject;
 import genericCheckpointing.xmlStoreRestore.StoreRestoreHandler;
 
 public class Driver {
