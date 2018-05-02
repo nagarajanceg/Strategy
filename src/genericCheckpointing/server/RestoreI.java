@@ -1,4 +1,7 @@
 package genericCheckpointing.server;
 
-public interface RestoreI {
+import genericCheckpointing.utill.SerializableObject;
+
+public interface RestoreI extends StoreRestoreI {
+    SerializableObject readObj(String wireFormat);
 }
