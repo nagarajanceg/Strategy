@@ -1,11 +1,6 @@
 package genericCheckpointing.util;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
-
-import java.io.IOException;
+import java.io.*;
 
 public class FileProcessor {
     /**
@@ -28,6 +23,21 @@ public class FileProcessor {
         return reader;
     }
 
+    public BufferedWriter writerDesc(String name){
+        FileOutputStream fp;
+        BufferedWriter writer = null;
+        try {
+            fp = new FileOutputStream(name);
+            writer =new BufferedWriter(new OutputStreamWriter(fp));
+        } catch (IOException e) {
+            System.out.println("File not found");
+            e.printStackTrace();
+        }finally {
+
+        }
+        return writer;
+    }
+
     /**
      * @param reader
      * @return
@@ -48,7 +58,15 @@ public class FileProcessor {
         }
         return line;
     }
+    public void writeLine(BufferedWriter writer, String content){
+        try {
+            writer.write(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
 
+        }
+    }
     @Override
     public String toString() {
         return "FileProcessor{}";

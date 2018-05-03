@@ -20,11 +20,14 @@ public class StoreRestoreHandler implements InvocationHandler {
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         String methodName = method.getName();
-        System.out.println("Method Name == "+methodName);
+//        System.out.println("Method Name == "+methodName);
         if(methodName.equals("readObj")){
             XMLDeserialization deserialization = new XMLDeserialization(fp, reader);
             deserialize(deserialization);
             return deserialization.getObj();
+        }else{
+            XMLSerialization serialization = new XMLSerialization();
+
         }
         return null;
     }

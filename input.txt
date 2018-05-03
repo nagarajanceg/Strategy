@@ -2,5 +2,9 @@
  <complexType xsi:type="genericCheckpointing.util.MyAllTypesFirst">
   <myInt xsi:type="xsd:int">314</myInt>
   <myString xsi:type="xsd:string">Design Patterns</myString>
+  <myLong xsi:type="xsd:long">314159</myLong>
+  <myOtherInt xsi:type="xsd:int">314</myOtherInt>
+  <myBool xsi:type="xsd:boolean">false</myBool>
+  <myDoubleT xsi:type="xsd:double">3.1459</myDoubleT>
  </complexType>
 </DPSerialization>
