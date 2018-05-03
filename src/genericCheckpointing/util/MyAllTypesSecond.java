@@ -4,14 +4,21 @@ public class MyAllTypesSecond extends SerializableObject {
     private int myInt;
     private String myString;
     private boolean myBool;
-    private Long myLong;
-    private Long myOtherLong;
+    private long myLong;
+    private long myOtherLong;
     private int myOtherInt;
     private double myDoubleT;
     private double myOtherDoubleT;
     private float myFloatT;
     private short myShortT;
     private char myCharT;
+
+    public MyAllTypesSecond(int myInt, String myString, double myDoubleT, float myFloatT) {
+        this.myInt = myInt;
+        this.myString = myString;
+        this.myDoubleT = myDoubleT;
+        this.myFloatT = myFloatT;
+    }
 
     public int getMyInt() {
         return myInt;
@@ -33,11 +40,11 @@ public class MyAllTypesSecond extends SerializableObject {
         return myBool;
     }
 
-    public void setMyBool(boolean myBool) {
+    public void setMyBool(Boolean myBool) {
         this.myBool = myBool;
     }
 
-    public Long getMyLong() {
+    public long getMyLong() {
         return myLong;
     }
 
@@ -45,7 +52,7 @@ public class MyAllTypesSecond extends SerializableObject {
         this.myLong = myLong;
     }
 
-    public Long getMyOtherLong() {
+    public long getMyOtherLong() {
         return myOtherLong;
     }
 
@@ -65,7 +72,7 @@ public class MyAllTypesSecond extends SerializableObject {
         return myDoubleT;
     }
 
-    public void setMyDoubleT(double myDoubleT) {
+    public void setMyDoubleT(Double myDoubleT) {
         this.myDoubleT = myDoubleT;
     }
 
@@ -73,7 +80,7 @@ public class MyAllTypesSecond extends SerializableObject {
         return myOtherDoubleT;
     }
 
-    public void setMyOtherDoubleT(double myOtherDoubleT) {
+    public void setMyOtherDoubleT(Double myOtherDoubleT) {
         this.myOtherDoubleT = myOtherDoubleT;
     }
 
@@ -81,7 +88,7 @@ public class MyAllTypesSecond extends SerializableObject {
         return myFloatT;
     }
 
-    public void setMyFloatT(float myFloatT) {
+    public void setMyFloatT(Float myFloatT) {
         this.myFloatT = myFloatT;
     }
 
@@ -89,7 +96,7 @@ public class MyAllTypesSecond extends SerializableObject {
         return myShortT;
     }
 
-    public void setMyShortT(short myShortT) {
+    public void setMyShortT(Short myShortT) {
         this.myShortT = myShortT;
     }
 
@@ -97,13 +104,13 @@ public class MyAllTypesSecond extends SerializableObject {
         return myCharT;
     }
 
-    public void setMyCharT(char myCharT) {
+    public void setMyCharT(Character myCharT) {
         this.myCharT = myCharT;
     }
 
     @Override
     public String toString() {
-        return "MyAllTypesFirst{" +
+        return "MyAllTypesSecond{" +
                 "myInt=" + myInt +
                 ",\n myString='" + myString + '\'' +
                 ",\n myBool=" + myBool +

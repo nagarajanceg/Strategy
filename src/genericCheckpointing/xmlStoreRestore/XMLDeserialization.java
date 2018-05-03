@@ -22,7 +22,7 @@ public class XMLDeserialization implements SerStrategy {
         return obj;
     }
 
-    public void setObj(SerializableObject obj) {
+    private void setObj(SerializableObject obj) {
         this.obj = obj;
     }
 
@@ -38,11 +38,11 @@ public class XMLDeserialization implements SerStrategy {
         Class<?> newClass = null;
         if (line != null && line.equalsIgnoreCase("<DPSerialization>")) {
             while ((line = fp.readLine(reader)) != null && !line.equalsIgnoreCase("</DPSerialization>")) {
-                System.out.println(line);
+//                System.out.println(line);
                 if (line.startsWith(" <complexType")) {
                     String[] packageName = (line.split("="));
                     String className = packageName[1].substring(1, packageName[1].length() - 2);
-                    System.out.println(newClass);
+//                    System.out.println(newClass);
                     try {
                         newClass = Class.forName(className);
                         object = newClass.newInstance();
@@ -77,7 +77,7 @@ public class XMLDeserialization implements SerStrategy {
         String[] rest = currLine[1].split("xsd:");
         //Figure out the data type
         String type = rest[1].substring(0, rest[1].indexOf('"'));
-        System.out.println("type ==== >"+ type);
+//        System.out.println("type ==== >"+ type);
         //Start and end index of to figure out the value
         int startInd = line.indexOf('>');
         int endInd = line.indexOf('<', startInd);

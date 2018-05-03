@@ -3,7 +3,7 @@ package genericCheckpointing.util;
 public class MyAllTypesFirst extends SerializableObject {
     private int myInt;
     private String myString;
-    private Boolean myBool;
+    private boolean myBool;
     private long myLong;
     private long myOtherLong;
     private int myOtherInt;
@@ -11,7 +11,14 @@ public class MyAllTypesFirst extends SerializableObject {
     private double myOtherDoubleT;
     private float myFloatT;
     private short myShortT;
-    private char myCharT;
+    private char myCharT = 'a' ;
+
+    public MyAllTypesFirst(int myInt, String myString, double myDoubleT, float myFloatT) {
+        this.myInt = myInt;
+        this.myString = myString;
+        this.myDoubleT = myDoubleT;
+        this.myFloatT = myFloatT;
+    }
 
     public int getMyInt() {
         return myInt;
@@ -29,7 +36,7 @@ public class MyAllTypesFirst extends SerializableObject {
         this.myString = myString;
     }
 
-    public Boolean isMyBool() {
+    public boolean isMyBool() {
         return myBool;
     }
 
@@ -41,7 +48,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myLong;
     }
 
-    public void setMyLong(long myLong) {
+    public void setMyLong(Long myLong) {
         this.myLong = myLong;
     }
 
@@ -49,7 +56,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myOtherLong;
     }
 
-    public void setMyOtherLong(long myOtherLong) {
+    public void setMyOtherLong(Long myOtherLong) {
         this.myOtherLong = myOtherLong;
     }
 
@@ -65,7 +72,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myDoubleT;
     }
 
-    public void setMyDoubleT(double myDoubleT) {
+    public void setMyDoubleT(Double myDoubleT) {
         this.myDoubleT = myDoubleT;
     }
 
@@ -81,7 +88,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myFloatT;
     }
 
-    public void setMyFloatT(float myFloatT) {
+    public void setMyFloatT(Float myFloatT) {
         this.myFloatT = myFloatT;
     }
 
@@ -89,7 +96,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myShortT;
     }
 
-    public void setMyShortT(short myShortT) {
+    public void setMyShortT(Short myShortT) {
         this.myShortT = myShortT;
     }
 
@@ -97,7 +104,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myCharT;
     }
 
-    public void setMyCharT(char myCharT) {
+    public void setMyCharT(Character myCharT) {
         this.myCharT = myCharT;
     }
 

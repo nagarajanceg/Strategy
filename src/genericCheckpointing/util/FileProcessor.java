@@ -29,6 +29,9 @@ public class FileProcessor {
         try {
             fp = new FileOutputStream(name);
             writer =new BufferedWriter(new OutputStreamWriter(fp));
+//            writer.write('e');
+//            writer.close();
+//            writeLine(writer, "test content");
         } catch (IOException e) {
             System.out.println("File not found");
             e.printStackTrace();
@@ -60,7 +63,26 @@ public class FileProcessor {
     }
     public void writeLine(BufferedWriter writer, String content){
         try {
+            System.out.println("content ==> "+ content);
             writer.write(content);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+
+        }
+    }
+    public void close(BufferedWriter writer){
+        try {
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+
+        }
+    }
+    public void close(BufferedReader reader){
+        try {
+            reader.close();
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
