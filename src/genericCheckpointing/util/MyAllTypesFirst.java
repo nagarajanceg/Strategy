@@ -20,6 +20,9 @@ public class MyAllTypesFirst extends SerializableObject {
         this.myFloatT = myFloatT;
     }
 
+    public MyAllTypesFirst() {
+    }
+
     public int getMyInt() {
         return myInt;
     }

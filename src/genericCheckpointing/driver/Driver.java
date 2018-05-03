@@ -38,12 +38,13 @@ public class Driver {
                 myRecordList.add(myRecordRet);
             }
         }else{
-            for (int i=0; i<NUM_OF_OBJECTS; i++) {
+            for (int i=0; i<1; i++) {
 
                 // FIXME: create these object instances correctly using an explicit value constructor
                 // use the index variable of this loop to change the values of the arguments to these constructors
                MyAllTypesFirst myFirst = new MyAllTypesFirst(25, "Serialize object", 56.789,78.26f);
-               MyAllTypesSecond mySecond = new MyAllTypesSecond(45, "Serialize second object", 86.789,98.26f);
+//                MyAllTypesFirst myFirst = new MyAllTypesFirst();
+                MyAllTypesSecond mySecond = new MyAllTypesSecond(45, "Serialize second object", 86.789,98.26f);
 
                 // FIXME: store myFirst and mySecond in the data structure
                 ((StoreI) cpointRef).writeObj(myFirst,1234, "XML");
