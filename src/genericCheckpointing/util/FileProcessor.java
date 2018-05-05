@@ -63,7 +63,6 @@ public class FileProcessor {
     }
     public void writeLine(BufferedWriter writer, String content){
         try {
-            System.out.println("content ==> "+ content);
             writer.write(content);
         } catch (IOException e) {
             e.printStackTrace();

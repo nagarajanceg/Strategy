@@ -13,6 +13,11 @@ public class XMLDeserialization implements SerStrategy {
     private FileProcessor fp;
     private SerializableObject obj = null;
 
+    /**
+     *
+     * @param fp
+     * @param reader
+     */
     public XMLDeserialization(FileProcessor fp, BufferedReader reader) {
         this.fp = fp;
         this.reader = reader;
@@ -93,7 +98,7 @@ public class XMLDeserialization implements SerStrategy {
         Class[] argTypes;
         switch (type){
             case "int":
-                argTypes = new Class[]{int.class};
+                argTypes = new Class[]{Integer.TYPE};
                 try {
                     Method method = newClass.getDeclaredMethod(methodName, argTypes);
                     method.invoke(object, Integer.parseInt(val));
@@ -119,10 +124,10 @@ public class XMLDeserialization implements SerStrategy {
                 }
                 break;
             case "double":
-                argTypes = new Class[]{Double.class};
+                argTypes = new Class[]{Double.TYPE};
                 try {
                     Method method = newClass.getDeclaredMethod(methodName, argTypes);
-                    double v = (double) Double.parseDouble(val);
+                    double v =  Double.parseDouble(val);
                     method.invoke(object, v);
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
@@ -133,7 +138,7 @@ public class XMLDeserialization implements SerStrategy {
                 }
                 break;
             case "long":
-                argTypes = new Class[]{Long.class};
+                argTypes = new Class[]{Long.TYPE};
                 try {
                     Method method = newClass.getDeclaredMethod(methodName, argTypes);
                     method.invoke(object, Long.valueOf(val));
@@ -146,7 +151,7 @@ public class XMLDeserialization implements SerStrategy {
                 }
                 break;
             case "boolean":
-                argTypes = new Class[]{Boolean.class};
+                argTypes = new Class[]{Boolean.TYPE};
                 try {
                     Method method = newClass.getDeclaredMethod(methodName, argTypes);
                     method.invoke(object, Boolean.parseBoolean(val));
@@ -159,7 +164,7 @@ public class XMLDeserialization implements SerStrategy {
                 }
                 break;
             case "float":
-                argTypes = new Class[]{Float.class};
+                argTypes = new Class[]{Float.TYPE};
                 try {
                     Method method = newClass.getDeclaredMethod(methodName, argTypes);
                     method.invoke(object, Float.parseFloat(val));
@@ -172,7 +177,7 @@ public class XMLDeserialization implements SerStrategy {
                 }
                 break;
             case "char":
-                argTypes = new Class[]{Character.class};
+                argTypes = new Class[]{Character.TYPE};
                 try {
                     Method method = newClass.getDeclaredMethod(methodName, argTypes);
                     method.invoke(object, val.charAt(0));
@@ -185,7 +190,7 @@ public class XMLDeserialization implements SerStrategy {
                 }
                 break;
             case "short":
-                argTypes = new Class[]{Short.class};
+                argTypes = new Class[]{Short.TYPE};
                 try {
                     Method method = newClass.getDeclaredMethod(methodName, argTypes);
                     method.invoke(object, Short.parseShort(val));

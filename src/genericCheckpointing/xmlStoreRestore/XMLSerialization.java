@@ -8,6 +8,8 @@ import java.io.BufferedWriter;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class XMLSerialization implements SerStrategy {
@@ -15,17 +17,20 @@ public class XMLSerialization implements SerStrategy {
     private BufferedReader reader;
     private BufferedWriter writer;
     private FileProcessor fp;
-
+    private List<SerializableObject> beforeSerialize = null;
     public XMLSerialization(BufferedReader reader, BufferedWriter writer, FileProcessor fp) {
         this.reader = reader;
         this.writer = writer;
         this.fp = fp;
+        this.beforeSerialize = new ArrayList<>();
+    }
+
+    public List<SerializableObject> getBeforeSerialize() {
+        return beforeSerialize;
     }
 
     @Override
     public void processInput(SerializableObject sObject) {
-        System.out.println("next call");
-        fp.writeLine(writer,"Hello from here");
         setRandomValues(sObject);
         populateXML(sObject);
     }
@@ -34,10 +39,9 @@ public class XMLSerialization implements SerStrategy {
         Field[] fields = sObject.getClass().getDeclaredFields();
 
         for (Field field: fields){
-
             setAppropriateType(sObject, field);
-
         }
+        this.beforeSerialize.add(sObject);
     }
     private void setAppropriateType(SerializableObject sObject, Field field){
         String methodName = setMethodName(field.getName());
@@ -49,16 +53,15 @@ public class XMLSerialization implements SerStrategy {
             case "int":
 //                System.out.println("My switch break int");
                 try {
-                    method = sObject.getClass().getDeclaredMethod(methodName, int.class);
+                    method = sObject.getClass().getDeclaredMethod(methodName, Integer.TYPE);
                     try {
-                        int num = random.nextInt(2000)+1;
+                        int num = random.nextInt(100)+1;
                         method.invoke(sObject, num);
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
                     } catch (InvocationTargetException e) {
                         e.printStackTrace();
                     }
-                    System.out.println(method);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
                 }
@@ -80,7 +83,7 @@ public class XMLSerialization implements SerStrategy {
             case "boolean":
                 boolean[] br = {true, false};
                 try {
-                    method = sObject.getClass().getDeclaredMethod(methodName, Boolean.class);
+                    method = sObject.getClass().getDeclaredMethod(methodName, Boolean.TYPE);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
                 }
@@ -94,7 +97,7 @@ public class XMLSerialization implements SerStrategy {
                 break;
             case "long":
                 try {
-                    method = sObject.getClass().getDeclaredMethod(methodName, Long.class);
+                    method = sObject.getClass().getDeclaredMethod(methodName, Long.TYPE);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
                 }
@@ -109,7 +112,7 @@ public class XMLSerialization implements SerStrategy {
                 break;
             case "short":
                 try {
-                    method = sObject.getClass().getDeclaredMethod(methodName, Short.class);
+                    method = sObject.getClass().getDeclaredMethod(methodName, Short.TYPE);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
                 }
@@ -124,7 +127,7 @@ public class XMLSerialization implements SerStrategy {
                 break;
             case "char":
                 try {
-                    method = sObject.getClass().getDeclaredMethod(methodName, Character.class);
+                    method = sObject.getClass().getDeclaredMethod(methodName, Character.TYPE);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
                 }
@@ -139,12 +142,12 @@ public class XMLSerialization implements SerStrategy {
                 break;
             case "double":
                 try {
-                    method = sObject.getClass().getDeclaredMethod(methodName, Double.class);
+                    method = sObject.getClass().getDeclaredMethod(methodName, Double.TYPE);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
                 }
                 try {
-                    method.invoke(sObject, random.nextDouble());
+                    method.invoke(sObject, generateRandomDouble(random));
 
                 } catch (IllegalAccessException e) {
                     e.printStackTrace();
@@ -154,7 +157,7 @@ public class XMLSerialization implements SerStrategy {
                 break;
             case "float":
                 try {
-                    method = sObject.getClass().getDeclaredMethod(methodName, Float.class);
+                    method = sObject.getClass().getDeclaredMethod(methodName, Float.TYPE);
                 } catch (NoSuchMethodException e) {
                     e.printStackTrace();
                 }
@@ -171,8 +174,6 @@ public class XMLSerialization implements SerStrategy {
             default:
                 break;
         }
-//        System.out.println(type);
-//        System.out.println(method);
     }
     //Reference -- http://www.baeldung.com/java-random-string
     private String randString(){
@@ -188,6 +189,10 @@ public class XMLSerialization implements SerStrategy {
         }
         String generatedString = buffer.toString();
         return generatedString;
+    }
+    private double generateRandomDouble(Random random){
+        double randomValue = 3.0 + (55.0 - 3.0) * random.nextDouble();
+        return randomValue;
     }
     //Reference -- http://www.baeldung.com/java-generate-random-long-float-integer-double
     private long generateRandomLong() {
@@ -229,10 +234,34 @@ public class XMLSerialization implements SerStrategy {
                     e.printStackTrace();
                 }
             }
-            formatter.append("\n <"+field.getName() +" xsi:type=\"xsd:"+field.getType()+"\">"+value+"</"+field.getName()+">");
+            if(field.getType().toString().equals("class java.lang.String")){
+                formatter.append("\n  <"+field.getName() +" xsi:type=\"xsd:"+"string"+"\">"+value+"</"+field.getName()+">");
+            }else{
+                if(checkLimitValue(value, field.getType().toString())){
+                    continue;
+                }
+                formatter.append("\n  <"+field.getName() +" xsi:type=\"xsd:"+field.getType()+"\">"+value+"</"+field.getName()+">");
+            }
         }
-        formatter.append("\n </complexType>\n" + "</DPSerialization>");
-        System.out.println(formatter);
+        formatter.append("\n </complexType>\n" + "</DPSerialization>\n");
+        fp.writeLine(writer, formatter.toString());
+//        System.out.println(formatter);
+    }
+    private boolean checkLimitValue(String value, String type){
+        if (type.equalsIgnoreCase("int")){
+            if(Integer.parseInt(value) <= 10){
+                return true;
+            }
+        }else if(type.equalsIgnoreCase("double")){
+            if(Double.parseDouble(value) <= 10){
+                return true;
+            }
+        }else if (type.equalsIgnoreCase("long")){
+            if(Long.parseLong(value) < 10){
+                return true;
+            }
+        }
+        return false;
     }
     private String getMethodName(String name) {
         if(name.equalsIgnoreCase("myBool")){

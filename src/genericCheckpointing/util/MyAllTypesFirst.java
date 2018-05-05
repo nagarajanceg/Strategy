@@ -11,14 +11,7 @@ public class MyAllTypesFirst extends SerializableObject {
     private double myOtherDoubleT;
     private float myFloatT;
     private short myShortT;
-    private char myCharT = 'a' ;
-
-    public MyAllTypesFirst(int myInt, String myString, double myDoubleT, float myFloatT) {
-        this.myInt = myInt;
-        this.myString = myString;
-        this.myDoubleT = myDoubleT;
-        this.myFloatT = myFloatT;
-    }
+    private char myCharT  ;
 
     public MyAllTypesFirst() {
     }
@@ -43,7 +36,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myBool;
     }
 
-    public void setMyBool(Boolean myBool) {
+    public void setMyBool(boolean myBool) {
         this.myBool = myBool;
     }
 
@@ -51,7 +44,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myLong;
     }
 
-    public void setMyLong(Long myLong) {
+    public void setMyLong(long myLong) {
         this.myLong = myLong;
     }
 
@@ -59,7 +52,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myOtherLong;
     }
 
-    public void setMyOtherLong(Long myOtherLong) {
+    public void setMyOtherLong(long myOtherLong) {
         this.myOtherLong = myOtherLong;
     }
 
@@ -75,7 +68,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myDoubleT;
     }
 
-    public void setMyDoubleT(Double myDoubleT) {
+    public void setMyDoubleT(double myDoubleT) {
         this.myDoubleT = myDoubleT;
     }
 
@@ -83,7 +76,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myOtherDoubleT;
     }
 
-    public void setMyOtherDoubleT(Double myOtherDoubleT) {
+    public void setMyOtherDoubleT(double myOtherDoubleT) {
         this.myOtherDoubleT = myOtherDoubleT;
     }
 
@@ -91,7 +84,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myFloatT;
     }
 
-    public void setMyFloatT(Float myFloatT) {
+    public void setMyFloatT(float myFloatT) {
         this.myFloatT = myFloatT;
     }
 
@@ -99,7 +92,7 @@ public class MyAllTypesFirst extends SerializableObject {
         return myShortT;
     }
 
-    public void setMyShortT(Short myShortT) {
+    public void setMyShortT(short myShortT) {
         this.myShortT = myShortT;
     }
 
@@ -107,8 +100,48 @@ public class MyAllTypesFirst extends SerializableObject {
         return myCharT;
     }
 
-    public void setMyCharT(Character myCharT) {
+    public void setMyCharT(char myCharT) {
         this.myCharT = myCharT;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MyAllTypesFirst that = (MyAllTypesFirst) o;
+
+        if (myInt != that.myInt) return false;
+        if (myBool != that.myBool) return false;
+        if (myLong != that.myLong) return false;
+        if (myOtherLong != that.myOtherLong) return false;
+        if (myOtherInt != that.myOtherInt) return false;
+        if (Double.compare(that.myDoubleT, myDoubleT) != 0) return false;
+        if (Double.compare(that.myOtherDoubleT, myOtherDoubleT) != 0) return false;
+        if (Float.compare(that.myFloatT, myFloatT) != 0) return false;
+        if (myShortT != that.myShortT) return false;
+        if (myCharT != that.myCharT) return false;
+        return myString.equals(that.myString);
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = myInt;
+        result = 31 * result + myString.hashCode();
+        result = 31 * result + (myBool ? 1 : 0);
+        result = 31 * result + (int) (myLong ^ (myLong >>> 32));
+        result = 31 * result + (int) (myOtherLong ^ (myOtherLong >>> 32));
+        result = 31 * result + myOtherInt;
+        temp = Double.doubleToLongBits(myDoubleT);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(myOtherDoubleT);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (myFloatT != +0.0f ? Float.floatToIntBits(myFloatT) : 0);
+        result = 31 * result + (int) myShortT;
+        result = 31 * result + (int) myCharT;
+        return result;
     }
 
     @Override
