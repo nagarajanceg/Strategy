@@ -51,6 +51,8 @@
         <java jar="${BUILD}/jar/genericCheckpointing.jar"  fork="true">
             <arg value="${arg0}"/>
             <arg value="${arg1}"/>
+            <arg value="${arg2}"/>
+            <arg value="${arg3}"/>
         </java>
     </target>
     <!-- ** ant to generate javadoc: https://stackoverflow.com/questions/1495982/how-to-generate-javadoc-with-ant-for-an-existing-project-->

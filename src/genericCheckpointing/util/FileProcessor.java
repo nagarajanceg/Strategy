@@ -14,7 +14,7 @@ public class FileProcessor {
             fp = new FileInputStream(name);
             reader = new BufferedReader(new InputStreamReader(fp));
         } catch (FileNotFoundException e) {
-            System.out.println("File Not found, please make sure the input file available");
+            Logger.writeMessage("File Not found, please make sure the input file available", Logger.getDebugValue());
             e.printStackTrace();
             System.exit(0);
         } finally {
@@ -33,7 +33,8 @@ public class FileProcessor {
 //            writer.close();
 //            writeLine(writer, "test content");
         } catch (IOException e) {
-            System.out.println("File not found");
+            Logger.writeMessage("File Not found", Logger.getDebugValue());
+//            System.out.println("File not found");
             e.printStackTrace();
         }finally {
 
@@ -54,7 +55,7 @@ public class FileProcessor {
             line = reader.readLine();
         } catch (IOException e) {
             e.printStackTrace();
-            System.out.println("Read a line error");
+            Logger.writeMessage("Read a line error", Logger.getDebugValue());
             System.exit(0);
         } finally {
 

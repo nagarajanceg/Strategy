@@ -48,14 +48,12 @@ public class XMLSerialization implements SerStrategy {
         Method method = null;
         String type = field.getType().toString();
         Random random = new Random();
-//        System.out.println("Mytype === "+ type);
         switch (type){
             case "int":
-//                System.out.println("My switch break int");
                 try {
                     method = sObject.getClass().getDeclaredMethod(methodName, Integer.TYPE);
                     try {
-                        int num = random.nextInt(100)+1;
+                        int num = random.nextInt(80)+1;
                         method.invoke(sObject, num);
                     } catch (IllegalAccessException e) {
                         e.printStackTrace();
@@ -191,14 +189,15 @@ public class XMLSerialization implements SerStrategy {
         return generatedString;
     }
     private double generateRandomDouble(Random random){
-        double randomValue = 3.0 + (55.0 - 3.0) * random.nextDouble();
+        double randomValue = 3.0 + ((55.0 - 3.0) * random.nextDouble());
         return randomValue;
     }
     //Reference -- http://www.baeldung.com/java-generate-random-long-float-integer-double
     private long generateRandomLong() {
         long leftLimit = 1L;
         long rightLimit = 10000L;
-        long generatedLong = leftLimit + (long) (Math.random() * (rightLimit - leftLimit));
+        long generatedLong;
+        generatedLong = leftLimit + (long) (Math.random() * (rightLimit - leftLimit));
         return generatedLong;
     }
 
@@ -245,15 +244,14 @@ public class XMLSerialization implements SerStrategy {
         }
         formatter.append("\n </complexType>\n" + "</DPSerialization>\n");
         fp.writeLine(writer, formatter.toString());
-//        System.out.println(formatter);
     }
     private boolean checkLimitValue(String value, String type){
         if (type.equalsIgnoreCase("int")){
-            if(Integer.parseInt(value) <= 10){
+            if(Integer.parseInt(value) < 10){
                 return true;
             }
         }else if(type.equalsIgnoreCase("double")){
-            if(Double.parseDouble(value) <= 10){
+            if(Double.parseDouble(value) < 10){
                 return true;
             }
         }else if (type.equalsIgnoreCase("long")){

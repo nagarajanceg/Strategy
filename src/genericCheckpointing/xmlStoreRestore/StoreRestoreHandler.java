@@ -8,7 +8,6 @@ import java.io.BufferedWriter;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class StoreRestoreHandler implements InvocationHandler {
@@ -17,13 +16,14 @@ public class StoreRestoreHandler implements InvocationHandler {
     private BufferedWriter writer;
     private SerializableObject sObject;
     private List<SerializableObject> beforeSerialize = null;
-    public StoreRestoreHandler() {
+    int debugLevel;
+    public StoreRestoreHandler(int debugLevel) {
         this.fp = new FileProcessor();
         this.beforeSerialize = new ArrayList<>();
+        this.debugLevel = debugLevel;
     }
 
     public void setInputFile(String name){
-        System.out.println(name);
         reader = fp.readerDesc(name);
     }
     public void setOutputFile(String name){
@@ -46,7 +46,6 @@ public class StoreRestoreHandler implements InvocationHandler {
             XMLSerialization serialization = new XMLSerialization(reader, writer, fp);
             serialize((SerializableObject) args[0], serialization);
             this.beforeSerialize.add((SerializableObject) args[0]);
-//            return args[0];
         }
         return null;
     }

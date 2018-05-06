@@ -1,3 +1,8 @@
+"This assignment's submission is my own work and I did not discuss with any other past or current student, 
+nor did I have access to a previous submission of this assignment by another student."
+Nagarajan Gopal
+ [Date:05/06/2018]
+------------------------------------------------------------------------
 Assuming you are in the directory containing this README:
 
 ## To clean:
@@ -10,20 +15,22 @@ ant -buildfile src/build.xml all
 -----------------------------------------------------------------------
 ## To run by specifying arguments from command line
 ## We will use this to run your code
-ant -buildfile src/build.xml run
+ant -buildfile src/build.xml run -Darg0=serdeser -Darg1=checkpoint.txt -Darg2=4 -Darg3=1
 
+arg0 - mode - serdeser or deser //serdeser by run default for other inputs
+arg1 - filename to read or write
+arg2 - Number of objects to generate or read. In serdeser N - MyAllTypesFirst
+and 2N- MyAllTypesSecond  are randomly created. In Deser - Read N objects
+arg3 - Debug level : 
+        0 -  To print None
+        1 -  To print debugging in order to view Mismatch count   
 -----------------------------------------------------------------------
 ##To generate a javadoc from command line
 ant -buildfile src/build.xml doc
 
 -----------------------------------------------------------------------
-"I have done this assignment completely on my own. I have not copied
- it, nor have I given my solution to anyone else. I understand that if
- I am involved in plagiarism or cheating I will have to sign an
- official form that I have cheated and that this form will be stored in
- my official university record. I also understand that I will receive a
- grade of 0 for the involved assignment for my first offense and that I
- will receive a grade of F for the course for any additional
- offense."
- [Date:05/01/2018]
-------------------------------------------------------------------------
+
+Data Structure used:
+ArrayList - To hold SerializableObject which used in comparison to figure out mismatch count. 
+
+
